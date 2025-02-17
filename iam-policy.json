@@ -1,0 +1,26 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::<SOURCE_BUCKET_NAME>",
+        "arn:aws:s3:::<SOURCE_BUCKET_NAME>/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "s3:PutObject",
+      "Resource": "arn:aws:s3:::<BACKUP_BUCKET_NAME>/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "sns:Publish",
+      "Resource": "arn:aws:sns:<YOUR_REGION>:<YOUR_AWS_ACCOUNT_ID>:<SNS_TOPIC_NAME>"
+    }
+  ]
+}

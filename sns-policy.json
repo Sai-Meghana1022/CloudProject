@@ -1,0 +1,26 @@
+{
+  Version 2012-10-17,
+  Statement [
+    {
+      Effect Allow,
+      Action [
+        s3GetObject,
+        s3ListBucket
+      ],
+      Resource [
+        arnawss3SOURCE_BUCKET_NAME,
+        arnawss3SOURCE_BUCKET_NAME
+      ]
+    },
+    {
+      Effect Allow,
+      Action s3PutObject,
+      Resource arnawss3BACKUP_BUCKET_NAME
+    },
+    {
+      Effect Allow,
+      Action snsPublish,
+      Resource arnawssnsYOUR_REGIONYOUR_AWS_ACCOUNT_IDSNS_TOPIC_NAME
+    }
+  ]
+}
